@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>JMOA Labs</title>
+<meta name="description" content="JMOA Labs builds websites, apps, business management systems, digital design and content for small businesses. Hot Springs, Arkansas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f4; --surface:#ffffff; --sunk:#e6ebe9; --line:#cfd8d4;
+  --fg:#15201c; --muted:#56635e; --accent:#1f4fd1; --accent-ink:#ffffff; --pine:#1d5a46; --pine-soft:#dbeae3;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --w:1080px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1513; --surface:#141d1a; --sunk:#1a2622; --line:#2a3833;
+  --fg:#e5ece9; --muted:#9aa9a3; --accent:#8aa8ff; --accent-ink:#0a1230; --pine:#6cc3a0; --pine-soft:#173229; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1513; --surface:#141d1a; --sunk:#1a2622; --line:#2a3833;
+  --fg:#e5ece9; --muted:#9aa9a3; --accent:#8aa8ff; --accent-ink:#0a1230; --pine:#6cc3a0; --pine-soft:#173229; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:var(--w);margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+.label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
+.mark svg{width:30px;height:30px;flex:none}
+.mark b{font:800 20px/1 var(--display);letter-spacing:-.02em}
+.mark b span{color:var(--accent)}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:15px}
+nav a:hover{color:var(--fg)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:40px 64px;border-bottom:1px solid var(--line)}
+.hero > *{min-width:0}
+.hero h1{font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:19px;color:var(--muted);max-width:52ch;margin:22px 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font:600 15px var(--body);text-decoration:none;border:1px solid var(--line);color:var(--fg);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{border-color:var(--accent)}
+.log{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(15,30,25,.35)}
+.log-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--sunk);border-bottom:1px solid var(--line)}
+.log-head .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pine);margin-right:8px;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.log ul{list-style:none;margin:0;padding:6px 0}
+.log li{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:9px 16px;font-size:14px;border-bottom:1px dashed var(--line)}
+.log li:last-child{border-bottom:0}
+.log time{font:12px/1.7 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.log .tag{font:500 11px var(--mono);color:var(--pine);background:var(--pine-soft);padding:1px 6px;border-radius:4px;margin-right:6px}
+section{padding-block:64px;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-weight:800;font-size:clamp(28px,3.6vw,40px)}
+.sec-head p{color:var(--muted);max-width:46ch;margin:0}
+.services{display:grid;gap:0;border-top:1px solid var(--fg)}
+.svc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.svc h3{font-weight:600;font-size:22px}
+.svc p{margin:0;color:var(--muted)}
+.svc .stack{font:13px/1.6 var(--mono);color:var(--muted)}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.case .kind{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.case h3{font-weight:800;font-size:26px}
+.case p{margin:0;color:var(--muted)}
+.case ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.case .link{margin-top:auto;font-weight:600}
+.pill{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:99px;background:var(--sunk);color:var(--muted)}
+.pill.own{background:var(--pine-soft);color:var(--pine)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.step{border-top:3px solid var(--accent);padding-top:14px}
+.step .label{color:var(--accent)}
+.step h3{font-weight:600;font-size:19px;margin:8px 0 6px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.contact > *{min-width:0}
+.contact h2{font-weight:800;font-size:clamp(30px,4.4vw,48px)}
+.contact p{color:var(--muted);font-size:18px;max-width:48ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:14px}
+.row{display:grid;gap:4px}
+.row .v{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:500 17px var(--body);word-break:break-word}
+.copy{font:500 12px var(--mono);border:1px solid var(--line);background:var(--bg);color:var(--fg);padding:4px 8px;border-radius:6px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;color:var(--muted);font-size:14px}
+@media (max-width:860px){
+  .hero,.contact{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr;gap:6px}
+  .work{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+  .steps{grid-template-columns:1fr}
+  .log li{grid-template-columns:1fr;gap:2px}
+  nav{gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="mark" href="#top" aria-label="JMOA Labs home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--fg)"/><path d="M11 8v11.5a3.5 3.5 0 0 1-3.5 3.5" stroke="var(--bg)" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="21" cy="19" r="5" stroke="var(--accent)" stroke-width="2.6" fill="none"/><circle cx="21" cy="10" r="1.8" fill="var(--accent)"/></svg>
+      <b>JMOA <span>Labs</span></b>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#how">How we work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <div>
+      <div class="label">Software studio · Hot Springs, Arkansas</div>
+      <h1 style="margin-top:14px">We build the systems your business <em>runs on.</em></h1>
+      <p>Websites, apps and custom business management tools for companies that have outgrown spreadsheets and off-the-shelf software. Designed around how your team actually works, shipped every week.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Start a project</a>
+        <a class="btn" href="#work">See the work</a>
+      </div>
+    </div>
+
+    <div class="log" aria-label="Recent build notes">
+      <div class="log-head"><span class="label"><span class="dot"></span>This week’s build log</span><span class="label">wk 45</span></div>
+      <ul>
+        <li><time>Mon 11/2</time><div><span class="tag">ops</span>Production stations from Pull to Shipping, with a printable daily sheet</div></li>
+        <li><time>Tue 11/3</time><div><span class="tag">sched</span>Ship-date calendar that skips weekends and lands two weeks before each event</div></li>
+        <li><time>Tue 11/3</time><div><span class="tag">books</span>Nightly QuickBooks posting for every sale, refund and payout</div></li>
+        <li><time>Wed 11/4</time><div><span class="tag">ship</span>One-click FedEx labels per box, with return labels emailed automatically</div></li>
+        <li><time>Wed 11/4</time><div><span class="tag">pay</span>Card pay links on invoices with automatic payment recording</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="services" aria-labelledby="svc-h">
+    <div class="sec-head">
+      <h2 id="svc-h">What we build</h2>
+      <p>One studio from the first sketch to the live system, so nothing gets lost between a designer, a developer and an IT person.</p>
+    </div>
+    <div class="services">
+      <div class="svc"><h3>Website development</h3><p>Fast, mobile-first sites and storefronts that take orders, bookings and payments, not just brochures.</p><div class="stack">Shopify · custom storefronts · SEO basics · hosting &amp; DNS</div></div>
+      <div class="svc"><h3>App development</h3><p>Web and mobile apps for your customers or your staff, with real logins, roles and payments.</p><div class="stack">Web apps · phone-ready PWAs · Stripe · Authorize.net</div></div>
+      <div class="svc"><h3>Business management systems</h3><p>Custom CRMs, order and production tracking, shipping, invoicing and reporting, tied into the tools you already pay for.</p><div class="stack">QuickBooks Online · FedEx APIs · email automation · dashboards</div></div>
+      <div class="svc"><h3>Digital design</h3><p>Logos, brand kits, interface design and print pieces that match across every screen and handout.</p><div class="stack">Brand identity · UI/UX · bid sheets &amp; print · social graphics</div></div>
+      <div class="svc"><h3>Content creation</h3><p>Website copy, product listings, email campaigns and guides written for the people you sell to.</p><div class="stack">Copywriting · product photos &amp; listings · email · help docs</div></div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head">
+      <h2 id="work-h">Work</h2>
+      <p>A product we own and run, and the kind of system we build for clients.</p>
+    </div>
+    <div class="work">
+      <article class="case">
+        <div class="kind"><span class="pill own">Owned by JMOA Labs</span><span class="label">Marketplace</span></div>
+        <h3>KeyFinale</h3>
+        <p>A fundraising marketplace where nonprofits host online events and supporters bid, buy now or make offers on items from vetted vendors.</p>
+        <ul>
+          <li>Host Event Hub to build, preview and launch events</li>
+          <li>Every sale split automatically between host, vendor and platform through Stripe Connect</li>
+          <li>Vendors paid when they ship, with refunds and settlement reconciled to the cent</li>
+          <li>Books posted to QuickBooks every night</li>
+        </ul>
+        <a class="link" href="https://www.keyfinale.com">keyfinale.com →</a>
+      </article>
+      <article class="case">
+        <div class="kind"><span class="pill">Client system</span><span class="label">Operations</span></div>
+        <h3>Auction operations platform</h3>
+        <p>A business management system for a charity-auction supplier, replacing paper orders and spreadsheets from first quote to returned inventory.</p>
+        <ul>
+          <li>Orders, customer approvals and invoicing with pay links</li>
+          <li>Production board for seven stations with daily print sheets</li>
+          <li>Packing, FedEx labels per box and return tracking</li>
+          <li>Event settlement and charity statements, with roles for 11 staff</li>
+        </ul>
+        <span class="link label" style="color:var(--muted)">Private system · built 2026</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-h">
+    <div class="sec-head">
+      <h2 id="how-h">How we work</h2>
+      <p>A flat weekly rate instead of surprise invoices. You see what shipped every week.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="label">Step 1</div><h3>Walk the floor</h3><p>We learn how your work moves today: who touches an order, where it stalls, what gets retyped.</p></div>
+      <div class="step"><div class="label">Step 2</div><h3>Mock it up</h3><p>You approve screens before code is written, so the build matches how your team talks.</p></div>
+      <div class="step"><div class="label">Step 3</div><h3>Build weekly</h3><p>New features go live on a test site each week with a written build log of what changed.</p></div>
+      <div class="step"><div class="label">Step 4</div><h3>Run and grow</h3><p>We train your staff, keep the system healthy and add what you need next.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h" style="border-bottom:0">
+    <div class="contact">
+      <div>
+        <h2 id="contact-h">Tell us what’s slowing your business down.</h2>
+        <p>Most projects start with a 30-minute call. Bring the spreadsheet, the paper form or the software you’re fighting with.</p>
+      </div>
+      <div class="card">
+        <div class="row"><span class="label">Call or text</span><div class="v"><span id="phone">(501) 282-3207</span><button class="copy" type="button" data-copy="phone">Copy</button></div></div>
+        <div class="row"><span class="label">Email</span><div class="v"><span id="email">jeffreycharlesowen@gmail.com</span><button class="copy" type="button" data-copy="email">Copy</button></div></div>
+        <div class="row"><span class="label">Based in</span><div class="v">Hot Springs Village, Arkansas</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 JMOA Labs, LLC. KeyFinale is a JMOA Labs company.</span>
+    <span>jmoalabs.com</span>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('click', async e => {
+  const b = e.target.closest('.copy'); if (!b) return;
+  const el = document.getElementById(b.dataset.copy); const text = el.textContent.trim();
+  try { await navigator.clipboard.writeText(text); b.textContent = 'Copied'; }
+  catch (_) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+  setTimeout(() => b.textContent = 'Copy', 1600);
+});
+</script>
+</body>
+</html>
